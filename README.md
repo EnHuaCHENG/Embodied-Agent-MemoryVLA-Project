@@ -41,7 +41,7 @@ We release two versions of the code in separate branches:
 
 This is MemoryVLA based on OpenVLA codebase, **if you need use dexbotic codebase**, please use [MemoryVLA+](https://github.com/shihao1895/MemoryVLA/tree/dexbotic-codebase).
 
- * [**Model Zoo & Simulation Results**](#Model Zoo & Simulation Results)
+ * [**Model Zoo & Benchmark Results**](#Model Zoo & Benchmark Results)
  * [**Install**](#Install)
  * [**Training**](#Training)
  * [**Evaluation in SimplerEnv**](#Evaluation in SimplerEnv)
@@ -52,7 +52,7 @@ This is MemoryVLA based on OpenVLA codebase, **if you need use dexbotic codebase
 
 
 
-## Model Zoo & Simulation Results
+## Model Zoo & Benchmark Results
 
 ### Bridge
 
@@ -293,6 +293,13 @@ If you find our work helpful in your research, please consider citing [our paper
   title={MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation},
   author={Shi, Hao and Xie, Bin and Liu, Yingfei and Sun, Lin and Liu, Fengrong and Wang, Tiancai and Zhou, Erjin and Fan, Haoqiang and Zhang, Xiangyu and Huang, Gao},
   journal={arXiv preprint arXiv:2508.19236},
+  year={2025}
+}
+
+@article{dexbotic,
+  title={Dexbotic: Open-Source Vision-Language-Action Toolbox},
+  author={Dexbotic Contributors},
+  journal={arXiv preprint arXiv:2510.23511},
   year={2025}
 }
 ```
