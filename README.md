@@ -35,11 +35,11 @@ We release two versions of the code in separate branches:
 
 This is MemoryVLA based on OpenVLA codebase, **if you need use dexbotic codebase**, please use [MemoryVLA+](https://github.com/shihao1895/MemoryVLA/tree/dexbotic-codebase).
 
- * [**Model Zoo & Benchmark Results**](#Model Zoo & Benchmark Results)
+ * [**Model Zoo & Benchmark Results**](#Model-Zoo-&-Benchmark-Results)
  * [**Install**](#Install)
  * [**Training**](#Training)
- * [**Evaluation in SimplerEnv**](#Evaluation in SimplerEnv)
- * [**Evaluation in LIBERO**](#Evaluation in LIBERO)
+ * [**Evaluation in SimplerEnv**](#Evaluation-in-SimplerEnv)
+ * [**Evaluation in LIBERO**](#Evaluation-in-LIBERO)
  * [**Deployment in The Real World**](#deployment-in-the-real-world)
  * [**FAQ**](#FAQ)
  * [**Citation**](#Citation)
@@ -77,9 +77,9 @@ This is MemoryVLA based on OpenVLA codebase, **if you need use dexbotic codebase
 
 ### Maniskill2
 
-| Model      | PickCube | StackCube | PickSingleYCB | PickSingleEGAD | PickClutterYCB | Avg. | CKPT & Logs                                                  |
-| ---------- | -------- | --------- | ------------- | -------------- | -------------- | ---- | ------------------------------------------------------------ |
-| MemoryVLA+ | 85       | 70        | 55            | 80             | 60             | 70   | [🤗 HF](https://huggingface.co/shihao1895/memvla-plus-maniskill2) |
+| Model      | Pick Cube | Stack Cube | Pick Single YCB | Pick Single EGAD | Pick Clutter YCB | Avg. | CKPT & Logs                                                  |
+| ---------- | --------- | ---------- | --------------- | ---------------- | ---------------- | ---- | ------------------------------------------------------------ |
+| MemoryVLA+ | 85        | 70         | 55              | 80               | 60               | 70   | [🤗 HF](https://huggingface.co/shihao1895/memvla-plus-maniskill2) |
 
 ## Install
 
@@ -109,7 +109,7 @@ cd MemoryVLA
 pip install -e .
 ```
 If you are using an NVIDIA Hopper GPU (e.g., H20) and encounter the error  
-**“Floating point exception (core dumped)”**, try reinstalling the specific cuBLAS version below:
+“Floating point exception (core dumped)”, try reinstalling the specific cuBLAS version below:
 
 ```bash
 # Fix for NVIDIA H20: "Floating point exception (core dumped)"
@@ -146,7 +146,7 @@ pip install nvidia-cublas-cu12==12.4.5.8
 
    Before training, modify several parameters in the corresponding scripts, such as `hf_token`, `wandb_entity`, checkpoint paths, dataset paths, and log directories.
 
-   We train on **a single node with 8× NVIDIA A100 GPUs**.
+   We train on a single node with 8× NVIDIA A100 GPUs.
 
    ```bash
    # Train on the Bridge dataset
@@ -207,7 +207,7 @@ To deploy the model on your own robot, first collect corresponding real-world ma
 
 Next, set up the server and client as shown in [`deploy.py`](deploy.py), and deploy the system on your real robot.
 
-The following command launches the **server**:
+The following command launches the server:
 ```bash
 bash script/eval/real_world/deploy.sh
 ```
@@ -240,7 +240,7 @@ sudo apt install -y libegl1-mesa libgl1-mesa-dev libgles2-mesa-dev
 and reference:
 https://maniskill.readthedocs.io/en/latest/user_guide/getting_started/installation.html#troubleshooting
 
-**Note**: Check that the .json files correctly link to the .so file corresponding to your current NVIDIA driver version. Use `nvidia-smi` to check your driver version and locate the correct .so under /usr/lib/x86_64-linux-gnu/.
+> **Note**: Check that the .json files correctly link to the .so file corresponding to your current NVIDIA driver version. Use `nvidia-smi` to check your driver version and locate the correct .so under /usr/lib/x86_64-linux-gnu/.
 
 **(2) OpenGL issues**  
 Example errors:
