@@ -1,15 +1,13 @@
 # MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation
 This is the code for the paper "MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation".
 
-### 🏠[Project Page](https://shihao1895.github.io/MemoryVLA/) | 📑[Paper](https://arxiv.org/abs/2508.19236) | 🤗[Models & Data](https://huggingface.co/collections/shihao1895/memoryvla)
+### 🏠[Project Page](https://shihao1895.github.io/MemoryVLA/) | 📑[Paper](https://arxiv.org/abs/2508.19236) | 🤗[Models & Logs](https://huggingface.co/collections/shihao1895/memoryvla)
 
 ## 🌟 News
 
 - 🔥 [2025-11-5] The code of [MemoryVLA](https://arxiv.org/abs/2508.19236) is released! (Both MemoryVLA and MemoryVLA+)
 - 🔥 [2025-10-21] Our VLA codebase [Dexbotic](https://github.com/Dexmal/dexbotic) is released, it now fully integrates MemoryVLA !
 - 🔥 [2025-8-26] Our paper [MemoryVLA](https://arxiv.org/abs/2508.19236) is now on arxiv!
-
-
 
 ## Overview
 
@@ -22,8 +20,6 @@ We release two versions of the code in separate branches:
 - **[MemoryVLA](https://github.com/shihao1895/MemoryVLA/tree/openvla-codebase)**:  built upon the OpenVLA codebase.
 - **[MemoryVLA+](https://github.com/shihao1895/MemoryVLA/tree/dexbotic-codebase)**:  built upon our self-developed [Dexbotic](https://dexbotic.com) codebase, which offers higher simulation performance.
 
-
-
 ## TODO
 
 - [x] Code Release (currently in a preview stage and will be further improved)
@@ -34,8 +30,6 @@ We release two versions of the code in separate branches:
   - [ ] MemoryVLA (OpenVLA codebase)
   - [ ] MemoryVLA+ (Dexbotic codebase)
 - [ ] Dataset Upload to HuggingFace
-
-
 
 ## Contents
 
@@ -49,8 +43,6 @@ This is MemoryVLA based on OpenVLA codebase, **if you need use dexbotic codebase
  * [**Deployment in The Real World**](#deployment-in-the-real-world)
  * [**SimplerEnv Installation FAQ**](#SimplerEnv Installation FAQ)
  * [**Citation**](#Citation)
-
-
 
 ## Model Zoo & Benchmark Results
 
@@ -89,8 +81,6 @@ This is MemoryVLA based on OpenVLA codebase, **if you need use dexbotic codebase
 | ---------- | -------- | --------- | ------------- | -------------- | -------------- | ---- | ------------------------------------------------------------ |
 | MemoryVLA+ | 85       | 70        | 55            | 80             | 60             | 70   | [🤗 HF](https://huggingface.co/shihao1895/memvla-plus-maniskill2) |
 
-
-
 ## Install
 
 The code is built using Python 3.10, and we use PyTorch == 2.2.0 and CUDA == 12.1 (It may run with lower versions, but we have not tested it).
@@ -125,8 +115,6 @@ If you are using an NVIDIA Hopper GPU (e.g., H20) and encounter the error
 # Fix for NVIDIA H20: "Floating point exception (core dumped)"
 pip install nvidia-cublas-cu12==12.4.5.8
 ```
-
-
 
 ## Training
 
@@ -179,8 +167,6 @@ pip install nvidia-cublas-cu12==12.4.5.8
 
    To finetune on your own customized data, please follow the instruction [(rlds_dataset_builder)](https://github.com/kpertsch/rlds_dataset_builder) for converting your data to RLDS format. The actions should be the deltas of end effector ``EEF Delta XYZ (3) + Roll-Pitch-Yaw (3) + Gripper Open/Close (1)``. Once your customized data is ready, place the customized data directly under the ``<data_root_dir>/custom_finetuning/1.0.0`` directory. Then set ``vla.data_mix="custom_finetuning"``.
 
-
-
 ## Evaluation in SimplerEnv
 
 We provide evaluation interfaces and scripts based on [SimplerEnv](https://simpler-env.github.io/).
@@ -198,8 +184,6 @@ We provide evaluation interfaces and scripts based on [SimplerEnv](https://simpl
 
    > **NOTE**: Due to the instability of the SimplerEnv benchmark and diffusion process, the performance scores across different iterations can vary significantly. Please evaluate multiple checkpoints and report the best result.
 
-
-
 ## Evaluation in LIBERO
 
 We also provide evaluation interfaces and scripts based on [LIBERO](https://libero-project.github.io/intro.html).
@@ -216,8 +200,6 @@ We also provide evaluation interfaces and scripts based on [LIBERO](https://libe
    ```
 
    > **NOTE:** The evaluation mechanism here is different from SimplerEnv. The process first loads the model using `develop.py`, then waits for a period before running `evaluation/libero/eval_libero.py` for testing. In addition, since performance may vary across iterations, please evaluate multiple checkpoints and report the best result.
-
-
 
 ## Deployment in the Real World
 
@@ -239,8 +221,6 @@ episode_first_frame = request.form['episode_first_frame']
 ```
 
 This deployment process follows a similar design to [OpenVLA](https://github.com/openvla/openvla) and [CogACT](https://github.com/microsoft/CogACT).
-
-
 
 ## FAQ
 
@@ -281,8 +261,6 @@ sudo apt install -y ffmpeg
 (4) **Benchmark Score Fluctuations**
 
 Benchmark scores tend to fluctuate, so we recommend evaluating checkpoints at regular iteration intervals and reporting the best result. Moreover, we have observed that even slight differences in Conda package versions may lead to small variations in the scores.
-
-
 
 ## Citation
 
