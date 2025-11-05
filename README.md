@@ -41,7 +41,7 @@ This is MemoryVLA based on OpenVLA codebase, **if you need use dexbotic codebase
  * [**Evaluation in SimplerEnv**](#Evaluation in SimplerEnv)
  * [**Evaluation in LIBERO**](#Evaluation in LIBERO)
  * [**Deployment in The Real World**](#deployment-in-the-real-world)
- * [**SimplerEnv Installation FAQ**](#SimplerEnv Installation FAQ)
+ * [**FAQ**](#FAQ)
  * [**Citation**](#Citation)
 
 ## Model Zoo & Benchmark Results
