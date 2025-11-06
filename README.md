@@ -46,6 +46,8 @@ This is MemoryVLA based on OpenVLA codebase, **if you need use dexbotic codebase
 
 ## Model Zoo & Benchmark Results
 
+> All datasets use only third-person RGB and language, without using wrist-view images or state.
+
 ### Bridge
 
 | Model      | Spoon | Carrot | Cube | Eggplant | Avg. | CKPT & Logs                                                  |
@@ -79,7 +81,7 @@ This is MemoryVLA based on OpenVLA codebase, **if you need use dexbotic codebase
 
 | Model      | Pick Cube | Stack Cube | Pick Single YCB | Pick Single EGAD | Pick Clutter YCB | Avg. | CKPT & Logs                                                  |
 | ---------- | --------- | ---------- | --------------- | ---------------- | ---------------- | ---- | ------------------------------------------------------------ |
-| MemoryVLA+ | 85        | 70         | 55              | 80               | 60               | 70   | [🤗 HF](https://huggingface.co/shihao1895/memvla-plus-maniskill2) |
+| MemoryVLA+ | 85        | 75         | 60              | 85               | 45               | 70   | [🤗 HF](https://huggingface.co/shihao1895/memvla-plus-maniskill2) |
 
 ## Install
 
@@ -135,10 +137,13 @@ pip install nvidia-cublas-cu12==12.4.5.8
    git clone https://huggingface.co/datasets/shihao1895/fractal-rlds
    ```
 
-2. Download pretrained model, we use [CogACT Pretrained Model](https://huggingface.co/CogACT/CogACT-Large)
+2. Download pretrained model, we use [OpenVLA Pretrained Model](https://huggingface.co/openvla/openvla-7b-prismatic) for LIBERO training, and [CogACT Pretrained Model](https://huggingface.co/CogACT/CogACT-Large) for Bridge and Fractal training.
 
    ```bash
-   # Download pretrained checkpoint (~31 GB)
+   # Download OpenVLA pretrained checkpoint (~30 GB)
+   git clone https://huggingface.co/openvla/openvla-7b-prismatic
+   
+   # Download CogACT pretrained checkpoint (~31 GB)
    git clone https://huggingface.co/CogACT/CogACT-Large
    ```
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pretrained_ckpt='./pretrained/CogACT-Large/checkpoints/CogACT-Large.pt'
+pretrained_ckpt='./pretrained/openvla-7b-prismatic/checkpoints/step-295000-epoch-40-loss=0.2200.pt'
 hf_token='YOUR_HF_TOKEN'
 
 data_root_dir='./data/libero-rlds'
